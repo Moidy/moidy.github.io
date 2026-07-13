@@ -108,11 +108,7 @@
         <!-- ─ Sharon AI VTuber ─ -->
         <article class="project-card featured" data-tags="ai streaming audio">
           <div class="card-screenshot">
-            <div class="img-placeholder">
-              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-              <span class="placeholder-filename">img/sharon.png</span>
-              <span class="placeholder-hint">VTuber avatar on stream · OBS scene layout · Sharon reacting to chat</span>
-            </div>
+            <img src="img/vtuber/sharon-on-stream.png" alt="Sharon AI VTuber live on stream, synthwave OBS scene with chat overlay" loading="lazy" />
             <div class="card-badge">Featured</div>
           </div>
           <div class="card-body">
@@ -184,11 +180,11 @@
         <!-- ─ Low-Latency TTS ─ -->
         <article class="project-card" data-tags="audio ai">
           <div class="card-screenshot">
-            <div class="img-placeholder" style="--ph-color: var(--neon-purple)">
-              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-              <span class="placeholder-filename">img/low-latency-tts.png</span>
-              <span class="placeholder-hint">App running in terminal · waveform / audio output · provider selection UI</span>
-            </div>
+            <img src="img/tts/low-latency-tts-system.png" alt="Low-Latency TTS configuration UI showing Google Cloud, ElevenLabs, and Azure Cognitive Speech settings" loading="lazy" />
+          </div>
+          <div class="card-gallery">
+            <img src="img/tts/tts-latency-log.png" alt="Per-utterance latency log showing sub-second synth times" loading="lazy" />
+            <img src="img/tts/tts-system-log.png" alt="System log output" loading="lazy" />
           </div>
           <div class="card-body">
             <div class="card-header">
@@ -221,28 +217,30 @@
         <!-- ─ Twitter Tools ─ -->
         <article class="project-card" data-tags="social ai">
           <div class="card-screenshot">
-            <div class="img-placeholder" style="--ph-color: var(--neon-orange)">
-              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-              <span class="placeholder-filename">img/twitter-tools.png</span>
-              <span class="placeholder-hint">Matplotlib engagement charts · dual-post to Twitter + Bluesky</span>
-            </div>
+            <img src="img/twitter-tools/views-vs-time-posted.png" alt="Views vs time of day chart showing a strong peak at 21:00 UTC" loading="lazy" />
+          </div>
+          <div class="card-gallery">
+            <img src="img/twitter-tools/views-vs-reposts.png" alt="Views vs reposts showing predictable proportional scaling" loading="lazy" />
+            <img src="img/twitter-tools/views-likes-over-time.png" alt="Views vs likes over time" loading="lazy" />
+            <img src="img/twitter-tools/views-vs-date.png" alt="Views vs date" loading="lazy" />
           </div>
           <div class="card-body">
             <div class="card-header">
               <h3 class="card-title">Twitter Tools</h3>
               <span class="card-status status-maintained">Maintained</span>
             </div>
-            <p class="card-subtitle">AI Social Media Manager</p>
+            <p class="card-subtitle">Cross-Platform Posting &amp; Analytics</p>
             <p class="card-desc">
-              AI-assisted content management with cross-posting from Twitter/X to Bluesky.
-              Includes data analysis and visualisation tools for tracking engagement,
-              with OpenAI-powered content suggestions and scheduling utilities.
+              Cross-posting tool for Twitter/X and Bluesky with a Pandas analytics layer.
+              Reposts and likes scaled predictably with views — but <strong>time of posting</strong>
+              showed a striking effect, with posts around 21:00 UTC consistently outperforming
+              the daytime cluster by 3–4×.
             </p>
             <ul class="card-features">
               <li>Dual-platform posting: Twitter/X + Bluesky (atproto)</li>
-              <li>OpenAI integration for content generation</li>
-              <li>Engagement analytics with Pandas + Matplotlib</li>
-              <li>OAuth-authenticated for both platforms</li>
+              <li>OpenAI integration for AI-assisted content suggestions</li>
+              <li>Time-of-posting analysis surfaced a clear ~21:00 UTC performance peak</li>
+              <li>Engagement visualisation with Pandas + Matplotlib</li>
             </ul>
             <div class="card-tags">
               <span class="tag tag-social">Twitter API</span>

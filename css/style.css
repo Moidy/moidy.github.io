@@ -721,4 +721,30 @@ em { color: var(--neon-cyan); font-style: normal; }
   line-height: 1.5;
 }
 
+/* ─── CARD GALLERY STRIP ───────────────────────────────────── */
+.card-gallery {
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  background: #050510;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.card-gallery::-webkit-scrollbar { display: none; }
+
+.card-gallery img {
+  height: 56px;
+  flex: 1;
+  min-width: 80px;
+  object-fit: cover;
+  border-radius: 3px;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+  cursor: zoom-in;
+}
+
+.card-gallery img:hover { opacity: 1; }
+
 /* Scroll-reveal transitions are handled by js/main.js via IntersectionObserver */
