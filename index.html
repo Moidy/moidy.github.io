@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moiders — Developer Portfolio</title>
+  <meta name="description" content="Moiders — developer portfolio showcasing AI, streaming tools, audio, and web projects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ── NAV ───────────────────────────────────────────────────── -->
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <span class="nav-logo">M<span class="accent">oi</span>ders</span>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── HERO ──────────────────────────────────────────────────── -->
+  <section class="hero" id="hero">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">// developer &amp; builder</p>
+      <h1 class="hero-title">
+        <span class="title-line">Moi</span><span class="title-line accent-glow">ders</span>
+      </h1>
+      <p class="hero-tagline">
+        I build things that listen, talk, play, and post.<br />
+        AI tools · Twitch integrations · Audio pipelines · Web apps.
+      </p>
+      <a href="#projects" class="btn-primary">View Projects</a>
+    </div>
+    <div class="hero-sun" aria-hidden="true"></div>
+  </section>
+
+  <!-- ── ABOUT ─────────────────────────────────────────────────── -->
+  <section class="section about" id="about">
+    <div class="container">
+      <h2 class="section-title">About<span class="dot accent">.</span></h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a developer with a passion for building things at the intersection of
+            <strong>AI, audio, and live streaming</strong>. Most of my work lives in private repos
+            because the git histories are a crime scene — but the <em>results</em> are worth showing off.
+          </p>
+          <p>
+            My projects range from full AI VTuber systems with speech synthesis and emotion engines,
+            to Twitch bots, cross-platform social media tools, and full-stack web APIs.
+            I like solving problems where the solution ends up running live in front of an audience.
+          </p>
+          <div class="skill-pills">
+            <span class="pill">Python</span>
+            <span class="pill">FastAPI</span>
+            <span class="pill">React</span>
+            <span class="pill">OpenAI</span>
+            <span class="pill">TwitchIO</span>
+            <span class="pill">Google Cloud</span>
+            <span class="pill">Docker</span>
+            <span class="pill">C#</span>
+            <span class="pill">RabbitMQ</span>
+          </div>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-number accent-glow">4+</span>
+            <span class="stat-label">AI-powered tools built</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number accent-glow">3</span>
+            <span class="stat-label">TTS providers integrated</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number accent-glow">∞</span>
+            <span class="stat-label">git commits I'm not proud of</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ───────────────────────────────────────────────── -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects<span class="dot accent">.</span></h2>
+
+      <!-- Filter buttons -->
+      <div class="filter-bar" role="group" aria-label="Filter projects">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ai">AI / ML</button>
+        <button class="filter-btn" data-filter="streaming">Streaming</button>
+        <button class="filter-btn" data-filter="audio">Audio</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="social">Social</button>
+      </div>
+
+      <!-- Project grid -->
+      <div class="project-grid" id="project-grid">
+
+        <!-- ─ Sharon AI VTuber ─ -->
+        <article class="project-card featured" data-tags="ai streaming audio">
+          <div class="card-screenshot">
+            <div class="img-placeholder">
+              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span class="placeholder-filename">img/sharon.png</span>
+              <span class="placeholder-hint">VTuber avatar on stream · OBS scene layout · Sharon reacting to chat</span>
+            </div>
+            <div class="card-badge">Featured</div>
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">Sharon</h3>
+              <span class="card-status status-active">Active</span>
+            </div>
+            <p class="card-subtitle">AI VTuber System</p>
+            <p class="card-desc">
+              Full AI VTuber chatbot with personality, emotional awareness, and synthesized voice.
+              Reads Twitch chat in real time, generates GPT-powered responses, synthesizes speech via
+              Google Cloud TTS, and reacts contextually using OpenCV screen analysis.
+              Twitch + Discord integration over a RabbitMQ message bus.
+            </p>
+            <ul class="card-features">
+              <li>Emotion expression engine with context memory</li>
+              <li>Multi-modal input: chat, speech recognition, screen vision</li>
+              <li>Twitch EventSub + Discord bridge via RabbitMQ</li>
+              <li>Packaged with Poetry, tested with pytest</li>
+            </ul>
+            <div class="card-tags">
+              <span class="tag tag-ai">Python</span>
+              <span class="tag tag-ai">OpenAI GPT</span>
+              <span class="tag tag-audio">Google TTS</span>
+              <span class="tag tag-ai">OpenCV</span>
+              <span class="tag tag-streaming">TwitchIO</span>
+              <span class="tag tag-streaming">Discord</span>
+              <span class="tag">RabbitMQ</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ─ Voice Tools API ─ -->
+        <article class="project-card" data-tags="web audio ai">
+          <div class="card-screenshot">
+            <div class="img-placeholder" style="--ph-color: var(--neon-cyan)">
+              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span class="placeholder-filename">img/voice-tools-ui.png</span>
+              <span class="placeholder-hint">React frontend UI · FastAPI /docs page · recording in action</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">Voice Tools API</h3>
+              <span class="card-status status-active">Active</span>
+            </div>
+            <p class="card-subtitle">Full-Stack Speech Web App</p>
+            <p class="card-desc">
+              A full-stack web application for speech-to-text, text-to-speech, and voice recognition.
+              FastAPI backend with auto-generated REST documentation and a React frontend
+              with dedicated routes for each voice processing mode.
+            </p>
+            <ul class="card-features">
+              <li>STT, TTS, and voice recognition in one unified API</li>
+              <li>Auto-generated OpenAPI docs via FastAPI</li>
+              <li>React frontend with per-feature UI views</li>
+              <li>CORS-enabled, ready for cross-origin integration</li>
+            </ul>
+            <div class="card-tags">
+              <span class="tag tag-web">FastAPI</span>
+              <span class="tag tag-web">React</span>
+              <span class="tag tag-web">Node.js</span>
+              <span class="tag tag-audio">Speech APIs</span>
+              <span class="tag tag-ai">Python</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ─ Low-Latency TTS ─ -->
+        <article class="project-card" data-tags="audio ai">
+          <div class="card-screenshot">
+            <div class="img-placeholder" style="--ph-color: var(--neon-purple)">
+              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span class="placeholder-filename">img/low-latency-tts.png</span>
+              <span class="placeholder-hint">App running in terminal · waveform / audio output · provider selection UI</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">Low-Latency TTS</h3>
+              <span class="card-status status-active">Active</span>
+            </div>
+            <p class="card-subtitle">Realtime Audio Pipeline</p>
+            <p class="card-desc">
+              A real-time TTS system with continuous speech recognition input and streaming audio output.
+              Supports multiple TTS providers with an async pipeline designed to minimise the gap
+              between speech input and audio response. Distributed as a standalone executable.
+            </p>
+            <ul class="card-features">
+              <li>Google Cloud TTS, ElevenLabs, and Azure Cognitive Speech</li>
+              <li>OpenAI Whisper for speech recognition input</li>
+              <li>Async pipeline — input and output run concurrently</li>
+              <li>Ships as a PyInstaller distributable (.exe)</li>
+            </ul>
+            <div class="card-tags">
+              <span class="tag tag-audio">Google TTS</span>
+              <span class="tag tag-audio">ElevenLabs</span>
+              <span class="tag tag-audio">Azure Speech</span>
+              <span class="tag tag-ai">Whisper</span>
+              <span class="tag">Python</span>
+              <span class="tag">PyInstaller</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ─ Twitter Tools ─ -->
+        <article class="project-card" data-tags="social ai">
+          <div class="card-screenshot">
+            <div class="img-placeholder" style="--ph-color: var(--neon-orange)">
+              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span class="placeholder-filename">img/twitter-tools.png</span>
+              <span class="placeholder-hint">Matplotlib engagement charts · dual-post to Twitter + Bluesky</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">Twitter Tools</h3>
+              <span class="card-status status-maintained">Maintained</span>
+            </div>
+            <p class="card-subtitle">AI Social Media Manager</p>
+            <p class="card-desc">
+              AI-assisted content management with cross-posting from Twitter/X to Bluesky.
+              Includes data analysis and visualisation tools for tracking engagement,
+              with OpenAI-powered content suggestions and scheduling utilities.
+            </p>
+            <ul class="card-features">
+              <li>Dual-platform posting: Twitter/X + Bluesky (atproto)</li>
+              <li>OpenAI integration for content generation</li>
+              <li>Engagement analytics with Pandas + Matplotlib</li>
+              <li>OAuth-authenticated for both platforms</li>
+            </ul>
+            <div class="card-tags">
+              <span class="tag tag-social">Twitter API</span>
+              <span class="tag tag-social">Bluesky</span>
+              <span class="tag tag-ai">OpenAI</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">Python</span>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /project-grid -->
+    </div>
+  </section>
+
+  <!-- ── CONTACT ────────────────────────────────────────────────── -->
+  <section class="section contact" id="contact">
+    <div class="container contact-inner">
+      <h2 class="section-title">Contact<span class="dot accent">.</span></h2>
+      <p class="contact-lead">
+        Want to know more about a project, collaborate, or just say hi?
+      </p>
+      <div class="contact-links">
+        <a class="contact-link" href="https://github.com/moid" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.4 7.9 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.17 1.18a11 11 0 0 1 2.89-.39c.98 0 1.97.13 2.89.39 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.41-5.27 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56C20.2 21.4 23.5 17.1 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <a class="contact-link" href="https://twitch.tv/moiders" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+          Twitch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p>Built by <span class="accent">Moiders</span> &mdash; repos intentionally private, vibes intentionally public.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
