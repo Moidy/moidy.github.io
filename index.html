@@ -141,38 +141,35 @@
           </div>
         </article>
 
-        <!-- ─ Voice Tools API ─ -->
-        <article class="project-card" data-tags="web audio ai">
+        <!-- ─ Stream Chat TTS ─ -->
+        <article class="project-card" data-tags="audio streaming ai">
           <div class="card-screenshot">
-            <div class="img-placeholder" style="--ph-color: var(--neon-cyan)">
-              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-              <span class="placeholder-filename">img/voice-tools-ui.png</span>
-              <span class="placeholder-hint">React frontend UI · FastAPI /docs page · recording in action</span>
-            </div>
+            <img src="img/chat-tts/tkinter-view.png" alt="Animated speaker character — the chat TTS overlay visualiser" loading="lazy" />
           </div>
           <div class="card-body">
             <div class="card-header">
-              <h3 class="card-title">Voice Tools API</h3>
+              <h3 class="card-title">Stream Chat TTS</h3>
               <span class="card-status status-active">Active</span>
             </div>
-            <p class="card-subtitle">Full-Stack Speech Web App</p>
+            <p class="card-subtitle">Twitch Chat-to-Voice System</p>
             <p class="card-desc">
-              A full-stack web application for speech-to-text, text-to-speech, and voice recognition.
-              FastAPI backend with auto-generated REST documentation and a React frontend
-              with dedicated routes for each voice processing mode.
+              Reads Twitch chat messages aloud in real time through a multi-engine TTS pipeline.
+              Each viewer can be assigned their own voice — from Google Cloud and ElevenLabs AI voices
+              to the retro SAM synthesiser and <strong>Animalese</strong> (Animal Crossing-style phoneme sounds).
+              Built on async queues so TTS, sound effects, and keyboard controls all run concurrently without blocking each other.
             </p>
             <ul class="card-features">
-              <li>STT, TTS, and voice recognition in one unified API</li>
-              <li>Auto-generated OpenAPI docs via FastAPI</li>
-              <li>React frontend with per-feature UI views</li>
-              <li>CORS-enabled, ready for cross-origin integration</li>
+              <li>Per-viewer voice assignment across 4 TTS engines</li>
+              <li>Animalese mode: custom letter-sample phoneme synthesis</li>
+              <li>Audio cache keyed by hash — no regenerating repeated phrases</li>
+              <li>Animated mouth overlay that syncs to speech output</li>
             </ul>
             <div class="card-tags">
-              <span class="tag tag-web">FastAPI</span>
-              <span class="tag tag-web">React</span>
-              <span class="tag tag-web">Node.js</span>
-              <span class="tag tag-audio">Speech APIs</span>
-              <span class="tag tag-ai">Python</span>
+              <span class="tag tag-streaming">TwitchIO</span>
+              <span class="tag tag-audio">Google TTS</span>
+              <span class="tag tag-audio">ElevenLabs</span>
+              <span class="tag tag-audio">SAM</span>
+              <span class="tag">Python</span>
             </div>
           </div>
         </article>
@@ -247,6 +244,44 @@
               <span class="tag tag-social">Bluesky</span>
               <span class="tag tag-ai">OpenAI</span>
               <span class="tag">Pandas</span>
+              <span class="tag">Python</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ─ VOD YouTube Uploader ─ -->
+        <article class="project-card" data-tags="web audio streaming">
+          <div class="card-screenshot">
+            <img src="img/vod-uploader/upload-tab.png" alt="YouTube VOD Uploader — upload tab showing single file and mass folder modes" loading="lazy" />
+          </div>
+          <div class="card-gallery">
+            <img src="img/vod-uploader/config-tab.png" alt="Configuration tab" loading="lazy" />
+            <img src="img/vod-uploader/normalizer-tab.png" alt="Audio normaliser tab" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">VOD YouTube Uploader</h3>
+              <span class="card-status status-active">Active</span>
+            </div>
+            <p class="card-subtitle">Batch Upload Tool for Streamers</p>
+            <p class="card-desc">
+              Built to replace the unreliable YouTube web UI for uploading large stream recordings.
+              Handles batch queues, auto-resumes failed uploads, and runs an
+              <strong>ffmpeg loudnorm pass</strong> on each file before upload to fix the
+              inconsistent audio levels common in Twitch VODs.
+              Distributed as a standalone <code>.exe</code> so non-technical streamers can use it without touching a terminal.
+            </p>
+            <ul class="card-features">
+              <li>ffmpeg loudnorm audio normalisation baked into the upload pipeline</li>
+              <li>Batch folder upload with automatic resume on failure</li>
+              <li>OAuth Google sign-in — no API keys to manage manually</li>
+              <li>Supports files 20 GB+, ships as a PyInstaller .exe</li>
+            </ul>
+            <div class="card-tags">
+              <span class="tag tag-web">tkinter</span>
+              <span class="tag tag-streaming">YouTube API</span>
+              <span class="tag tag-audio">ffmpeg</span>
+              <span class="tag">PyInstaller</span>
               <span class="tag">Python</span>
             </div>
           </div>

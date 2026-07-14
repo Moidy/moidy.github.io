@@ -501,6 +501,15 @@ em { color: var(--neon-cyan); font-style: normal; }
   line-height: 1.7;
 }
 
+.card-desc code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: var(--neon-cyan);
+  background: rgba(0,229,255,0.08);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
 .card-features {
   list-style: none;
   display: flex;
