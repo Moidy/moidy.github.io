@@ -1,0 +1,20 @@
+title: Moiders — Developer Portfolio
+description: Developer portfolio — AI, streaming tools, audio pipelines, and desktop apps.
+baseurl: ""
+url: "https://moidy.github.io"
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: "_projects"
+      type: projects
+    values:
+      layout: project
