@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<article class="project-post">
+  <div class="container">
+
+    <a href="{{ '/' | relative_url }}#projects" class="post-back">← Back to projects</a>
+
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-subtitle">{{ page.subtitle }}</p>
+      <div class="post-meta">
+        <span class="card-status {% if page.status == 'Active' %}status-active{% else %}status-maintained{% endif %}">
+          {{ page.status }}
+        </span>
+        {% for tag in page.tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </header>
+
+    {% if page.image %}
+    <div class="post-hero">
+      <img src="{{ page.image }}" alt="{{ page.image_alt | default: page.title }}" loading="lazy" />
+    </div>
+    {% endif %}
+
+    {% if page.gallery %}
+    <div class="post-gallery">
+      {% for img in page.gallery %}
+      <img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" />
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+  </div>
+</article>
