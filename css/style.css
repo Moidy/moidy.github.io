@@ -743,6 +743,14 @@ em { color: var(--neon-cyan); font-style: normal; }
   transition: gap var(--transition), color var(--transition);
 }
 
+/* Stretch the link to cover the whole card */
+.card-read-more::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
 .card-read-more:hover {
   color: var(--neon-pink);
   gap: 10px;
