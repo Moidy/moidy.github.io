@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stream Commands — Moiders</title>
+  <meta name="description" content="Viewer and moderator commands for Moiders streaming tools." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">M<span class="accent">oi</span>ders</a>
+      <nav>
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="stream-commands.html" aria-current="page">Commands</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="commands-page">
+    <section class="commands-hero">
+      <div class="grid-bg" aria-hidden="true"></div>
+      <div class="scanlines" aria-hidden="true"></div>
+      <div class="container commands-hero-content">
+        <p class="hero-eyebrow">// stream toolkit</p>
+        <h1 class="commands-title">Stream Commands<span class="dot accent">.</span></h1>
+        <p>Commands available to viewers and moderators across the Twitch tools built for the stream.</p>
+      </div>
+    </section>
+
+    <section class="commands-section">
+      <div class="container">
+        <div class="commands-heading">
+          <div>
+            <p class="commands-kicker">Chat TTS</p>
+            <h2>Jerry's Chat Controls</h2>
+          </div>
+          <p>Viewer commands for the chat-to-voice system, sound effects, and stream games.</p>
+        </div>
+
+        <div class="command-grid">
+          <article class="command-group">
+            <h3>General</h3>
+            <dl class="command-list">
+              <div><dt><code>!help</code> <code>!commands</code></dt><dd>Show the available viewer and moderator commands.</dd></div>
+              <div><dt><code>!sounds</code></dt><dd>List the enabled sound effects.</dd></div>
+              <div><dt><code>#&lt;sound&gt;</code></dt><dd>Play a named sound effect when sound effects are enabled.</dd></div>
+              <div><dt><code>?&lt;key&gt;</code></dt><dd>Send a configured keyboard input to the stream setup.</dd></div>
+              <div><dt><code>+death</code></dt><dd>Add one to the on-stream death counter.</dd></div>
+            </dl>
+          </article>
+
+          <article class="command-group">
+            <h3>Slots &amp; Points</h3>
+            <dl class="command-list">
+              <div><dt><code>!slot</code> <code>!slots</code></dt><dd>Spin the chat slot machine. A per-viewer cooldown applies.</dd></div>
+              <div><dt><code>!scoreboard</code> <code>!leaderboard</code></dt><dd>Show the top five slot-machine scores.</dd></div>
+              <div><dt><code>!points</code> <code>!wallet</code> <code>!balance</code></dt><dd>Show your points, active perks, curses, insurance, bounties, and title.</dd></div>
+              <div><dt><code>!spend &lt;item&gt; [args]</code></dt><dd>Spend points on perks such as insurance, curse, jackpot, double, gift, steal, bounty, mystery, colour, or title.</dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <div class="commands-heading stream-game-heading">
+          <div>
+            <p class="commands-kicker">Stream Game</p>
+            <h2>Battle Arena</h2>
+          </div>
+          <p>Join the real-time chat-controlled arena and manage your fighter.</p>
+        </div>
+
+        <div class="command-grid command-grid-wide">
+          <article class="command-group">
+            <h3>Enter &amp; Fight</h3>
+            <dl class="command-list">
+              <div><dt><code>!spawn</code></dt><dd>Spawn your fighter in the arena.</dd></div>
+              <div><dt><code>!attack [target]</code></dt><dd>Attack another fighter or the active boss.</dd></div>
+              <div><dt><code>!defend</code></dt><dd>Take a defensive combat action.</dd></div>
+              <div><dt><code>!target [name]</code></dt><dd>Set your target.</dd></div>
+              <div><dt><code>!boss [args]</code></dt><dd>Use boss-related actions when a boss encounter is active.</dd></div>
+              <div><dt><code>!heal</code></dt><dd>Restore health.</dd></div>
+              <div><dt><code>!status</code></dt><dd>Show your fighter's current status.</dd></div>
+            </dl>
+          </article>
+
+          <article class="command-group">
+            <h3>Explore &amp; Recover</h3>
+            <dl class="command-list">
+              <div><dt><code>!classes [class]</code></dt><dd>View or select available character classes.</dd></div>
+              <div><dt><code>!left</code> <code>!right</code></dt><dd>Move horizontally through the arena.</dd></div>
+              <div><dt><code>!up</code> <code>!down</code></dt><dd>Move vertically through the arena.</dd></div>
+              <div><dt><code>!pickup</code></dt><dd>Pick up an item in the arena.</dd></div>
+              <div><dt><code>!flee</code></dt><dd>Attempt to escape combat.</dd></div>
+              <div><dt><code>!die</code></dt><dd>Trigger the death or respawn flow.</dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <div class="commands-heading stream-game-heading">
+          <div>
+            <p class="commands-kicker">Sharon</p>
+            <h2>AI VTuber</h2>
+          </div>
+          <p>Ask Sharon a question directly in Twitch chat.</p>
+        </div>
+
+        <div class="command-grid command-grid-single">
+          <article class="command-group">
+            <h3>Talk to Sharon</h3>
+            <dl class="command-list">
+              <div><dt><code>!ask &lt;question&gt;</code></dt><dd>Send a question to Sharon for an in-character AI response.</dd></div>
+              <div><dt><code>!hello</code></dt><dd>Ask Sharon for a greeting.</dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <aside class="mod-note">
+          <p><strong>Moderator controls are intentionally not listed here.</strong> They manage TTS approvals, muting, filters, slot settings, and bot pause state.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built by <span class="accent">Moiders</span> &mdash; repos intentionally private, vibes intentionally public.</p>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
