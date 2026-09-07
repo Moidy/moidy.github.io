@@ -61,7 +61,57 @@
               <div><dt><code>!slot</code> <code>!slots</code></dt><dd>Spin the chat slot machine. A per-viewer cooldown applies.</dd></div>
               <div><dt><code>!scoreboard</code> <code>!leaderboard</code></dt><dd>Show the top five slot-machine scores.</dd></div>
               <div><dt><code>!points</code> <code>!wallet</code> <code>!balance</code></dt><dd>Show your points, active perks, curses, insurance, bounties, and title.</dd></div>
-              <div><dt><code>!spend &lt;item&gt; [args]</code></dt><dd>Spend points on perks such as insurance, curse, jackpot, double, gift, steal, bounty, mystery, colour, or title.</dd></div>
+              <div><dt><code>!spend &lt;item&gt; [args]</code></dt><dd>Buy a perk from the point shop. Full options and costs are below.</dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <div class="commands-heading stream-game-heading">
+          <div>
+            <p class="commands-kicker">Slots &amp; Points</p>
+            <h2>Point Shop</h2>
+          </div>
+          <p>Spend points to improve your next spin, influence another viewer, or customise the leaderboard.</p>
+        </div>
+
+        <div class="command-grid">
+          <article class="command-group">
+            <h3>Spin Perks</h3>
+            <dl class="command-list">
+              <div><dt><code>!spend insurance</code> <code>200 pts</code></dt><dd>Add one insurance charge. It absorbs the next <code>six</code> penalty.</dd></div>
+              <div><dt><code>!spend jackpot</code> <code>500 pts</code></dt><dd>Boost your next spin with a guaranteed high-value <code>seven</code> or <code>chest</code> reel.</dd></div>
+              <div><dt><code>!spend double</code> <code>100 pts</code></dt><dd>Double the points from your next winning spin. It is not spent on a loss.</dd></div>
+              <div><dt><code>!spend mystery</code> <code>250 pts</code></dt><dd>Open a mystery box: it can award a jackpot, insurance, or a boost, but may also curse you or do nothing.</dd></div>
+            </dl>
+          </article>
+
+          <article class="command-group">
+            <h3>Target Another Viewer</h3>
+            <dl class="command-list">
+              <div><dt><code>!spend curse @viewer</code> <code>300 pts</code></dt><dd>Make <code>six</code> appear on the target's next spin. Use <code>random</code> instead of a viewer to pick an active target.</dd></div>
+              <div><dt><code>!spend gift @viewer &lt;amount&gt;</code></dt><dd>Transfer the chosen number of your points to another viewer.</dd></div>
+              <div><dt><code>!spend steal @viewer</code> <code>150 pts</code></dt><dd>Attempt to steal up to 300 points. It succeeds 25% of the time; on failure, the 150-point fee is lost.</dd></div>
+              <div><dt><code>!spend bounty @viewer &lt;amount&gt;</code></dt><dd>Place your points in a bounty pool on a target. The next jackpot winner claims the pool.</dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <div class="command-grid command-grid-wide point-shop-secondary">
+          <article class="command-group">
+            <h3>Leaderboard Cosmetics</h3>
+            <dl class="command-list">
+              <div><dt><code>!spend color &lt;color&gt;</code> <code>500 pts</code></dt><dd>Set your leaderboard name colour. Available colours: gold, red, purple, cyan, green, orange, or pink.</dd></div>
+              <div><dt><code>!spend title &lt;name&gt;</code> <code>1000 pts</code></dt><dd>Set a custom leaderboard title, up to 15 characters long.</dd></div>
+            </dl>
+          </article>
+
+          <article class="command-group">
+            <h3>How a Spin Pays</h3>
+            <dl class="command-list">
+              <div><dt><code>3 matching symbols</code></dt><dd>Jackpot: the symbol value is multiplied by three.</dd></div>
+              <div><dt><code>2 matching symbols</code></dt><dd>Mini-win: receive the matching symbol's value.</dd></div>
+              <div><dt><code>six</code></dt><dd>A bad result: lose 1000 points unless an insurance charge blocks it.</dd></div>
+              <div><dt><code>cherry / lemon / bell / clover / diamond / chest / seven</code></dt><dd>Values range from 10 to 150 points; chest and seven are the highest-value symbols.</dd></div>
             </dl>
           </article>
         </div>
