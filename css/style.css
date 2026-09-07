@@ -643,6 +643,155 @@ em { color: var(--neon-cyan); font-style: normal; }
   color: var(--text-muted);
 }
 
+/* ─── STREAM COMMANDS ───────────────────────────────────────── */
+.commands-page {
+  min-height: 100vh;
+}
+
+.commands-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 142px 0 68px;
+  border-bottom: 1px solid var(--border);
+}
+
+.commands-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.commands-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.commands-hero p:last-child {
+  max-width: 600px;
+  color: var(--text-dim);
+  font-size: 1.05rem;
+}
+
+.commands-section {
+  padding: 72px 0 90px;
+}
+
+.commands-heading {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(280px, 1.2fr);
+  align-items: end;
+  gap: 32px;
+  margin-bottom: 26px;
+}
+
+.commands-heading h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+
+.shelved-label {
+  font-family: var(--font-mono);
+  font-size: 0.55em;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.commands-heading > p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.commands-kicker {
+  font-family: var(--font-mono);
+  color: var(--neon-pink);
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.stream-game-heading {
+  margin-top: 70px;
+}
+
+.command-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.command-group {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  padding: 24px;
+}
+
+.command-group h3 {
+  font-family: var(--font-display);
+  color: var(--neon-cyan);
+  font-size: 0.94rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+
+.command-list > div {
+  padding: 12px 0;
+  border-top: 1px solid rgba(191, 95, 255, 0.12);
+}
+
+.command-list dt {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.command-list code {
+  font-family: var(--font-mono);
+  color: var(--neon-yellow);
+  font-size: 0.82rem;
+  background: rgba(255, 230, 0, 0.07);
+  border: 1px solid rgba(255, 230, 0, 0.16);
+  border-radius: 3px;
+  padding: 2px 6px;
+}
+
+.command-list dd {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.command-grid-single {
+  grid-template-columns: minmax(0, 540px);
+}
+
+.mod-note {
+  margin-top: 44px;
+  border-left: 3px solid var(--neon-purple);
+  background: rgba(191, 95, 255, 0.06);
+  color: var(--text-dim);
+  padding: 14px 18px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 640px) {
+  .commands-hero { padding: 112px 0 52px; }
+  .commands-heading, .command-grid { grid-template-columns: 1fr; gap: 12px; }
+  .commands-heading { align-items: start; }
+  .stream-game-heading { margin-top: 52px; }
+  .command-group { padding: 20px; }
+}
+
 /* ─── RESPONSIVE ─────────────────────────────────────────────── */
 @media (max-width: 840px) {
   .about-grid {
@@ -741,6 +890,14 @@ em { color: var(--neon-cyan); font-style: normal; }
   letter-spacing: 0.04em;
   margin-top: 12px;
   transition: gap var(--transition), color var(--transition);
+}
+
+/* Stretch the link to cover the whole card */
+.card-read-more::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 .card-read-more:hover {
