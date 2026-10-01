@@ -4,6 +4,7 @@ subtitle: Realtime Audio Pipeline
 status: Active
 image: /img/tts/low-latency-tts-system.png
 image_alt: Low-Latency TTS configuration UI showing provider settings
+showcase_image: true
 tags: [Python, Google TTS, ElevenLabs, Azure Speech, Whisper, PyInstaller]
 gallery:
   - src: /img/tts/tts-latency-log.png
@@ -14,9 +15,9 @@ gallery:
 
 ## What is it?
 
-A real-time text-to-speech pipeline where the input is speech (via OpenAI Whisper) and the output is synthesised audio through one of three cloud TTS providers. The use case is live voice processing — say something, hear it played back in a different voice within a second.
+A real-time text-to-speech pipeline where the input is speech (via OpenAI Whisper) and the output is synthesised audio through one of three cloud TTS providers. The idea is simple: say something, then hear it played back in a different voice before the moment has passed. In practice, getting that to happen quickly is where the project gets interesting.
 
-The "low-latency" part is the actual engineering challenge. Cloud TTS APIs have non-trivial round-trip times. The goal was to minimise the gap between speech input completing and audio output starting.
+The "low-latency" part is the actual engineering challenge. Cloud TTS APIs have non-trivial round-trip times, and calling something realtime does not make the network move faster. The goal was to minimise the gap between speech input completing and audio output starting.
 
 ## The Pipeline
 
@@ -40,7 +41,7 @@ Provider selection
           VLC playback
 ```
 
-The key design decision: STT and TTS run in separate async tasks. While one utterance is being synthesised, the next can be transcribed. This is what the latency log shows — the synthesis time (~0.69s) and queue wait time overlap with the previous utterance's playback, so the *perceived* gap is much shorter than the raw numbers suggest.
+The key design decision: STT and TTS run in separate async tasks. While one utterance is being synthesised, the next can be transcribed. This is what the latency log shows — the synthesis time (~0.69s) and queue wait time overlap with the previous utterance's playback, so the *perceived* gap is much shorter than the raw numbers suggest. I cared more about the conversation feeling quick than winning a stopwatch contest, so that overlap matters.
 
 ## Measured Latency
 
@@ -52,7 +53,7 @@ From the latency log (captured during a real session):
 | 2 | 0.69s | 0.22s | 4.15s |
 | 3 | 0.69s | 0.31s | 4.22s |
 
-The first utterance is slower (cold start, no cached connection). Subsequent utterances settle around **0.69s synthesis** with the total time (including recognition and playback startup) around **4.2s**. For a real-time voice pipeline running on consumer hardware over a standard internet connection, that's acceptable.
+The first utterance is slower (cold start, no cached connection). Subsequent utterances settle around **0.69s synthesis** with the total time (including recognition and playback startup) around **4.2s**. The first one has to wake everything up; after that, it behaves itself. For a real-time voice pipeline running on consumer hardware over a standard internet connection, that's acceptable.
 
 ## Provider Comparison
 
