@@ -4,6 +4,7 @@ subtitle: Cross-Platform Posting & Analytics
 status: Maintained
 image: /img/twitter-tools/views-vs-time-posted.png
 image_alt: Scatter chart of tweet views vs time of day, showing a strong peak at 21:00 UTC
+showcase_image: true
 tags: [Python, Twitter API, Bluesky, OpenAI, Pandas, Matplotlib]
 gallery:
   - src: /img/twitter-tools/views-vs-reposts.png
@@ -16,9 +17,9 @@ gallery:
 
 ## What is it?
 
-Two things bundled together: a cross-platform posting tool that publishes content simultaneously to Twitter/X and Bluesky, and a data analysis layer that processes engagement metrics to find patterns worth acting on.
+Two things bundled together: a cross-platform posting tool that publishes content simultaneously to Twitter/X and Bluesky, and a data analysis layer that processes engagement metrics to find patterns worth acting on. Posting twice from one place is convenient; finding out whether the numbers actually tell me anything is the part I built the charts for.
 
-The posting side is straightforward OAuth-authenticated API calls. The interesting part was the analytics.
+The posting side is straightforward OAuth-authenticated API calls. The interesting part was the analytics, especially when the data declined to confirm my assumptions.
 
 ## The Data Findings
 
@@ -28,11 +29,11 @@ Three variables were tested against view counts across a corpus of tweets:
 
 ### Date Posted — Not Interesting
 
-Plotting views against calendar date shows one significant outlier (a tweet that happened to go semi-viral) and a flat distribution otherwise. Date alone predicts nothing useful — the distribution is effectively noise with one spike.
+Plotting views against calendar date shows one significant outlier (a tweet that happened to go semi-viral) and a flat distribution otherwise. Date alone predicts nothing useful — the distribution is effectively noise with one spike. Not every chart earns its keep, but this one at least stopped me from pretending there was a trend.
 
 ### Reposts and Likes — Obvious
 
-Views, reposts, and likes scale together. More-viewed tweets get more reposts and likes. This is exactly what you'd expect and confirms the data pipeline is working, but adds no actionable signal.
+Views, reposts, and likes scale together. More-viewed tweets get more reposts and likes. This is exactly what you'd expect and confirms the data pipeline is working, but adds no actionable signal. The graph is reassuring in the same way checking that a calculator can add is reassuring: good to know, not a strategy.
 
 ### **Time of Posting — Actually Interesting**
 
@@ -43,7 +44,7 @@ This is the chart worth looking at (shown above). Plotting views against the hou
 - The single highest-performing tweet was posted at **~21:00 UTC**
 - The 21:00 UTC slot outperformed the 12:00–17:00 daytime cluster by **3–4×**
 
-The sample size isn't large enough to claim this is a universal finding, but it's a clear enough signal to be worth testing deliberately. The hypothesis is that 21:00 UTC (22:00 BST / 17:00 EST) hits the evening peak for both European and North American audiences simultaneously — a brief window where both timezones are active.
+The sample size isn't large enough to claim this is a universal finding, but it's a clear enough signal to be worth testing deliberately. The hypothesis is that 21:00 UTC (22:00 BST / 17:00 EST) hits the evening peak for both European and North American audiences simultaneously — a brief window where both timezones are active. A useful lead, not a magic posting hour; the next step is to test it on purpose rather than crown one lucky tweet king.
 
 ## Cross-Platform Architecture
 

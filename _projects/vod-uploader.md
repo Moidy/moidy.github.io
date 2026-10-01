@@ -4,6 +4,7 @@ subtitle: Batch Upload Tool for Streamers
 status: Active
 image: /img/vod-uploader/upload-tab.png
 image_alt: YouTube VOD Uploader GUI showing single file and mass folder upload modes
+showcase_image: true
 tags: [Python, tkinter, YouTube Data API, ffmpeg, PyInstaller]
 gallery:
   - src: /img/vod-uploader/normalizer-tab.png
@@ -14,13 +15,13 @@ gallery:
 
 ## The Problem
 
-YouTube's web uploader is unreliable for large files. Stream recordings — especially long ones at high bitrate — regularly exceed 4–8 GB. At that size, the browser uploader frequently stalls, loses progress, or silently fails partway through. Re-uploading a 6 GB file from scratch every time the browser tab refreshes is not a workflow.
+YouTube's web uploader kept breaking on me and it at least felt unreliable for large files. Stream recordings — especially long ones at high bitrate — often were about 4–8 GB in size. Sometimes over 20 GB if I did a big stream. At that size, the browser uploader frequently stalls, loses progress, or silently fails partway through. Re-uploading a 6 GB file from scratch every time the browser tab refreshes is not a workflow.
 
-The YouTube Data API v3 supports **resumable uploads**: the upload is chunked, each chunk is acknowledged, and a failed upload can be resumed from the last successful chunk rather than starting over. The web UI doesn't expose this properly. The API does.
+The YouTube Data API v3 supports **resumable uploads**: the upload is chunked, each chunk is acknowledged, and a failed upload can be resumed from the last successful chunk rather than starting over. The web UI doesn't expose this properly. The API does. I wanted the upload to survive the sort of interruption that makes you stare at a progress bar and reconsider your evening.
 
 ## The Tool
 
-A desktop GUI application (tkinter) that wraps the YouTube Data API with a focus on reliability and usability for non-technical streamers. The primary users aren't developers — they're streamers who want to upload last night's VOD without fighting with a browser.
+A desktop GUI application (tkinter) that wraps the YouTube Data API with a focus on reliability and usability for somewhat non-technical streamers, if you know api keys then your good enough to go. The primary users aren't developers — they're streamers who want to upload last night's VOD without fighting with a browser. So the fiddly API work stays behind a GUI instead of becoming someone's surprise weekend project.
 
 Key decisions made with that user in mind:
 
@@ -32,14 +33,14 @@ Key decisions made with that user in mind:
 
 ## Audio Normalisation
 
-Twitch VODs have inconsistent audio levels. The microphone, game audio, and alert sounds are mixed live — and the mix varies session to session. Uploading a VOD playlist where volume jumps between episodes is a bad viewer experience.
+Twitch VODs have inconsistent audio levels whenever I was sending files straight from Twitch to YouTube. The microphone, game audio, and alert sounds are mixed live into the one track — and the mix varies session to session. Uploading a VOD playlist where volume is too quiet is pointless for youtube as there is a general expectation that audio levels should be reasonably consistent between channels.
 
-The normaliser tab runs an **ffmpeg loudnorm** two-pass filter on each file before upload:
+The normaliser tab runs an **ffmpeg loudnorm** two-pass filter on each file before upload. It's there because a playlist should not make viewers reach for the volume control between episodes:
 
 1. **Analysis pass** — ffmpeg measures the integrated loudness, true peak, and loudness range of the file
 2. **Normalisation pass** — ffmpeg re-encodes the audio track to the target loudness level (default: -16 LUFS, matching YouTube's normalisation target)
 
-The video stream is copied without re-encoding (fast), only the audio is processed. The output files are stored in a configurable output directory, leaving originals untouched.
+The video stream is copied without re-encoding (fast-ish), only the audio is processed. The output files are stored in a configurable output directory, leaving originals untouched.
 
 ```
 Input VOD  ──► [ffmpeg loudnorm analysis]
